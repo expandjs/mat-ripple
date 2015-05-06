@@ -1,0 +1,31 @@
+<link rel="import" href="../mat-demo/mat-demo.html">
+<link rel="import" href="../mat-paper/mat-paper.html">
+<link rel="import" href="mat-ripple.html">
+
+<polymer-element name="mat-ripple-demo" noscript>
+
+    <template>
+        <style>
+            :host .paper {
+                border-radius: 50%;
+                height: 150px;
+                margin: auto;
+                width: 150px;
+            }
+        </style>
+        <mat-demo label="mat-ripple">
+
+            <h1>Default</h1>
+            <mat-paper class="paper" z="1">
+                <mat-ripple></mat-ripple>
+            </mat-paper>
+
+            <h1>Auto center</h1>
+            <mat-paper class="paper" z="1">
+                <mat-ripple autoCenter></mat-ripple>
+            </mat-paper>
+
+        </mat-demo>
+    </template>
+
+</polymer-element>
