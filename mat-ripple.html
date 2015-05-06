@@ -286,8 +286,8 @@ This element is used to display a visual effect that simulates rippling from the
             contextChanged: function (pre, post) {
                 var self = this;
                 if (arguments.length < 2) { return; }
-                if (pre) { XP.unlisten(pre, {down: self.handleDownBinded, up: self.handleUpBinded}); }
-                if (post) { XP.listen(post, {down: self.handleDownBinded, up: self.handleUpBinded}); }
+                if (pre) { XP.unlisten(pre, {down: self.handleDownBound, up: self.handleUpBound}); }
+                if (post) { XP.listen(post, {down: self.handleDownBound, up: self.handleUpBound}); }
             },
 
             /*********************************************************************/
@@ -295,8 +295,8 @@ This element is used to display a visual effect that simulates rippling from the
             // LISTENER
             ready: function () {
                 var self = this;
-                self.handleDownBinded = self.handleDown.bind(self);
-                self.handleUpBinded   = self.handleUp.bind(self);
+                self.handleDownBound = self.handleDown.bind(self);
+                self.handleUpBound   = self.handleUp.bind(self);
             },
 
             /*********************************************************************/
