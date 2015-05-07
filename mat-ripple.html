@@ -125,7 +125,7 @@ This element is used to display a visual effect that simulates rippling from the
                 self.timeLast = Date.now();
 
                 // Animation
-                XP.requestAnimationFrame(function () {
+                XP.delay(function () {
 
                     // Styling
                     XP.setStyle(wave, 'height', data.radius + 'px');
@@ -158,7 +158,7 @@ This element is used to display a visual effect that simulates rippling from the
                 var self = this;
 
                 // Animation
-                XP.requestAnimationFrame(function () {
+                XP.delay(function () {
 
                     // Vars
                     var elapsed    = Date.now() - self.timeLast,
