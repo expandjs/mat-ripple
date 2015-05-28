@@ -51,38 +51,51 @@ This element is used to display a visual effect that simulates rippling from the
             }
 
             :host #matRippleWrapper {
+                border-radius: inherit;
+                color: inherit;
                 pointer-events: none !important;
             }
 
             :host #matRippleBackground {
                 background: currentColor;
+                border-radius: inherit;
                 opacity: 0;
-                transition: opacity .8s;
+                transition: opacity 0.8s;
                 will-change: opacity;
             }
 
             :host(:not([autoCenter])) #matRippleBackground[rippling] {
-                opacity: 0.5;
+                opacity: 0.12;
+            }
+
+            :host #matRippleWaves {
+                border-radius: 50%;
             }
 
             :host #matRippleWaves * {
                 background: currentColor;
-                border-radius: 50%;
+                border-radius: inherit;
+                opacity: 0.24;
                 position: absolute;
+                -webkit-transform: translate(0, 0) scale(0);
                 transform: translate(0, 0) scale(0);
-                transition: opacity .24s, transform .24s;
+                -webkit-transition: opacity 0.24s, -webkit-transform 0.24s;
+                transition: opacity 0.24s, transform 0.24s;
                 will-change: opacity, transform;
             }
 
             :host #matRippleWaves *[rippling] {
-                opacity: 0.25;
-                transition: opacity .54s, transform .54s;
+                opacity: 0.06;
+                -webkit-transition: opacity 0.54s, -webkit-transform 0.54s;
+                transition: opacity 0.54s, transform 0.54s;
             }
 
             :host #matRippleWaves *[smoothing] {
                 opacity: 0;
+                -webkit-transform: scale(1);
                 transform: scale(1);
-                transition: opacity .54s, transform .54s;
+                -webkit-transition: opacity 0.54s, -webkit-transform 0.54s;
+                transition: opacity 0.54s, transform 0.54s;
             }
 
             :host([autoCenter]) #matRippleWaves * {
@@ -90,10 +103,10 @@ This element is used to display a visual effect that simulates rippling from the
             }
 
             :host([autoCenter]) #matRippleWaves *[rippling] {
-                opacity: 1;
+                opacity: 0.24;
             }
         </style>
-        <mat-ink id="matRippleWrapper" color="{{color}}" opacity="ripple" fit>
+        <mat-ink id="matRippleWrapper" color="{{color}}" fit>
             <div id="matRippleBackground" fit></div>
             <div id="matRippleWaves" fit></div>
         </mat-ink>
@@ -137,6 +150,7 @@ This element is used to display a visual effect that simulates rippling from the
                     XP.setStyle(wave, 'left', data.left + 'px');
                     XP.setStyle(wave, 'top', data.top + 'px');
                     XP.setStyle(wave, 'width', data.radius + 'px');
+                    XP.setStyle(wave, '-webkit-transform', 'translate(' + data.dx + 'px, ' + data.dy + 'px) scale(1)');
                     XP.setStyle(wave, 'transform', 'translate(' + data.dx + 'px, ' + data.dy + 'px) scale(1)');
 
                     // Setting
