@@ -16,13 +16,13 @@ This element is used to display a visual effect that simulates rippling from the
 @homepage http://expandjs.com/elements/mat-ripple
 @demo http://expandjs.com/demo/mat-ripple
 
-@dependency polymer Polymer/polymer
-@dependency expandjs ExpandJS/expandjs
-@dependency iron-flex-layout PolymerElements/iron-flex-layout
-@dependency mat-ink ExpandJS/mat-ink
+@dependency polymer Polymer/polymer#^1.0.4
+@dependency expandjs ExpandJS/expandjs#0.9.1
+@dependency iron-flex-layout PolymerElements/iron-flex-layout#^1.0.2
+@dependency mat-ink ExpandJS/mat-ink#0.9.1
 
-@devDependency mat-demo ExpandJS/mat-demo
-@devDependency mat-paper ExpandJS/mat-paper
+@devDependency mat-demo ExpandJS/mat-demo#0.9.1
+@devDependency mat-paper ExpandJS/mat-paper#0.9.1
 -->
 
 <link rel="import" href="../polymer/polymer.html">
@@ -246,8 +246,8 @@ This element is used to display a visual effect that simulates rippling from the
 
             // LISTENERS
             listeners: {
-                mousedown: '_handleTouch',
-                mouseup: '_handleTouch'
+                down: '_handleTouch',
+                up: '_handleTouch'
             },
 
             // PROPERTIES
@@ -329,8 +329,8 @@ This element is used to display a visual effect that simulates rippling from the
                 if (arguments.length < 2) { return; }
 
                 // Listening
-                if (pre) { self.unlisten(pre, 'mousedown', '_handleTouch'); self.unlisten(pre, 'mouseup', '_handleTouch'); }
-                if (post) { self.listen(post, 'mousedown', '_handleTouch'); self.listen(post, 'mouseup', '_handleTouch'); }
+                if (pre) { self.unlisten(pre, 'down', '_handleTouch'); self.unlisten(pre, 'up', '_handleTouch'); }
+                if (post) { self.listen(post, 'down', '_handleTouch'); self.listen(post, 'up', '_handleTouch'); }
 
                 // Styling
                 XP.setStyle(self, 'pointer-events', post ? 'none' : null);
@@ -345,10 +345,10 @@ This element is used to display a visual effect that simulates rippling from the
                 var self = this;
 
                 // Setting
-                self._setPressed(event.type === 'mousedown');
+                self._setPressed(event.type === 'down');
 
                 // Animating
-                if (event.type === 'mousedown') { self.ripple(event.clientX, event.clientY); } else { self.smooth(); }
+                if (event.type === 'down') { self.ripple(event.detail.x, event.detail.y); } else { self.smooth(); }
             }
         });
     </script>
