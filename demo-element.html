@@ -5,28 +5,33 @@
 <dom-module id="mat-ripple-demo">
 
     <style>
-        :host .demo-paper {
-            border-radius: 50%;
-            height: 150px;
-            margin: auto;
-            width: 150px;
+        :host .demo-label {
+            height: 100px;
+            line-height: 100px;
+            text-align: center;
         }
     </style>
 
     <template>
-        <mat-demo label="mat-ripple">
 
-            <div class="demo-title">Default</div>
-            <mat-paper class="demo-paper" z="2">
+        <mat-demo label="Default">
+            <script type="text/html">
+                <div class="demo-label">Tap me!</div>
                 <mat-ripple></mat-ripple>
-            </mat-paper>
-
-            <div class="demo-title">Auto center</div>
-            <mat-paper class="demo-paper" z="2">
-                <mat-ripple auto-center></mat-ripple>
-            </mat-paper>
-
+            </script>
+            <div class="demo-label">Tap me!</div>
+            <mat-ripple></mat-ripple>
         </mat-demo>
+
+        <mat-demo label="Auto center">
+            <script type="text/html">
+                <div class="demo-label">Tap me!</div>
+                <mat-ripple auto-center></mat-ripple>
+            </script>
+            <div class="demo-label">Tap me!</div>
+            <mat-ripple auto-center></mat-ripple>
+        </mat-demo>
+
     </template>
 
     <script>
