@@ -13,22 +13,26 @@
 
     <template>
 
-        <mat-demo label="Default">
-            <script type="text/html">
+        <mat-demo name="mat-ripple" type="element" url="http://expandjs.com/elements/mat-ripple">
+
+            <mat-demo-panel label="Default">
+                <script type="text/html">
+                    <div class="demo-label">Tap me!</div>
+                    <mat-ripple></mat-ripple>
+                </script>
                 <div class="demo-label">Tap me!</div>
                 <mat-ripple></mat-ripple>
-            </script>
-            <div class="demo-label">Tap me!</div>
-            <mat-ripple></mat-ripple>
-        </mat-demo>
+            </mat-demo-panel>
 
-        <mat-demo label="Auto center">
-            <script type="text/html">
+            <mat-demo-panel label="Auto center">
+                <script type="text/html">
+                    <div class="demo-label">Tap me!</div>
+                    <mat-ripple auto-center></mat-ripple>
+                </script>
                 <div class="demo-label">Tap me!</div>
                 <mat-ripple auto-center></mat-ripple>
-            </script>
-            <div class="demo-label">Tap me!</div>
-            <mat-ripple auto-center></mat-ripple>
+            </mat-demo-panel>
+
         </mat-demo>
 
     </template>
