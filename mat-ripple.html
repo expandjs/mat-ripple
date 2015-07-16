@@ -131,7 +131,7 @@ This element is used to display a visual effect that simulates rippling from the
                 var self       = this,
                     background = self.$.matRippleBackground,
                     waves      = self.$.matRippleWaves,
-                    wave       = XP.appendChild(Polymer.dom(waves), XP.createElement('div')),
+                    wave       = Polymer.dom(waves).appendChild(XP.createElement('div')),
                     data       = self._waveData(wave, startX, startY);
 
                 // Setting
