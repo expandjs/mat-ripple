@@ -17,11 +17,11 @@ This element is used to display a visual effect that simulates rippling from the
 @demo http://expandjs.com/demo/mat-ripple
 
 @dependency polymer Polymer/polymer#^1.0.0
-@dependency expandjs ExpandJS/expandjs#0.9.4
+@dependency expandjs ExpandJS/expandjs#0.9.5
 @dependency iron-flex-layout PolymerElements/iron-flex-layout#^1.0.0
-@dependency mat-ink ExpandJS/mat-ink#0.9.4
+@dependency mat-ink ExpandJS/mat-ink#0.9.5
 
-@devDependency mat-demo ExpandJS/mat-demo#0.9.4
+@devDependency mat-demo ExpandJS/mat-demo#0.9.5
 -->
 
 <link rel="import" href="../polymer/polymer.html">
@@ -333,6 +333,19 @@ This element is used to display a visual effect that simulates rippling from the
 
                 // Styling
                 XP.setStyle(self, 'pointer-events', post ? 'none' : null);
+            },
+
+            /*********************************************************************/
+
+            // LISTENER
+            attached: function () {
+
+                // Vars
+                var self   = this,
+                    parent = XP.getParentElement(Polymer.dom(self));
+
+                // Setting
+                if (parent && !self.context && XP.matches(parent, 'mat-paper[pressable]')) { self.context = parent; }
             },
 
             /*********************************************************************/
