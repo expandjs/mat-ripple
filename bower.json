@@ -2,6 +2,7 @@
   "name": "mat-ripple",
   "license": "BSD-3-Clause",
   "version": "0.9.6",
+  "main": "mat-ripple.html",
   "description": "A custom element used to display a Material Design ripple effect created by user interaction",
   "homepage": "http://expandjs.com/elements/mat-ripple",
   "authors": [
@@ -17,9 +18,6 @@
     "html5",
     "expandjs",
     "web-components"
-  ],
-  "main": [
-    "mat-ripple.html"
   ],
   "ignore": [
     "**/.*"
