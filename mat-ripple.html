@@ -131,7 +131,7 @@ The ripple's `color` can be changed accordingly to the
             transform: translate(0, 0) scale(0);
             -webkit-transition: opacity 0.54s, -webkit-transform 0.54s;
             transition: opacity 0.54s, transform 0.54s;
-            will-change: opacity, transform;
+            will-change: opacity, -webkit-transform, transform;
         }
 
         :host([auto-center]) #matRippleWaves * {
