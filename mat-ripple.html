@@ -80,78 +80,80 @@ The ripple's `color` can be changed accordingly to the
 
 <dom-module id="mat-ripple">
 
-    <style>
-        :host {
-            @apply(--layout-fit);
-            border-radius: inherit;
-            display: block;
-            overflow: hidden;
-            -moz-user-select: none;
-            -ms-user-select: none;
-            -webkit-user-select: none;
-            user-select: none;
-        }
-
-        :host([animated]) {
-            -webkit-transform: translate3d(0, 0, 0);
-            transform: translate3d(0, 0, 0);
-        }
-
-        :host #matRippleWrapper {
-            @apply(--layout-fit);
-            border-radius: inherit;
-            color: inherit;
-            pointer-events: none !important;
-        }
-
-        :host #matRippleBackground {
-            @apply(--layout-fit);
-            background: currentColor;
-            border-radius: inherit;
-            opacity: 0;
-            transition: opacity 0.8s;
-            will-change: opacity;
-        }
-
-        :host(:not([auto-center])) #matRippleBackground[rippling] {
-            opacity: 0.10;
-        }
-
-        :host #matRippleWaves {
-            @apply(--layout-fit);
-            border-radius: 50%;
-        }
-
-        :host #matRippleWaves * {
-            background: currentColor;
-            border-radius: inherit;
-            opacity: 0.10;
-            position: absolute;
-            -webkit-transform: translate(0, 0) scale(0);
-            transform: translate(0, 0) scale(0);
-            -webkit-transition: opacity 0.54s, -webkit-transform 0.54s;
-            transition: opacity 0.54s, transform 0.54s;
-            will-change: opacity, -webkit-transform, transform;
-        }
-
-        :host([auto-center]) #matRippleWaves * {
-            opacity: 0.20;
-        }
-
-        :host #matRippleWaves *[smoothing] {
-            opacity: 0;
-            -webkit-transform: scale(1);
-            transform: scale(1);
-            -webkit-transition: opacity 0.54s, -webkit-transform 0.54s;
-            transition: opacity 0.54s, transform 0.54s;
-        }
-    </style>
-
     <template>
+
+        <style>
+            :host {
+                @apply(--layout-fit);
+                border-radius: inherit;
+                display: block;
+                overflow: hidden;
+                -moz-user-select: none;
+                -ms-user-select: none;
+                -webkit-user-select: none;
+                user-select: none;
+            }
+
+            :host([animated]) {
+                -webkit-transform: translate3d(0, 0, 0);
+                transform: translate3d(0, 0, 0);
+            }
+
+            :host #matRippleWrapper {
+                @apply(--layout-fit);
+                border-radius: inherit;
+                color: inherit;
+                pointer-events: none !important;
+            }
+
+            :host #matRippleBackground {
+                @apply(--layout-fit);
+                background: currentColor;
+                border-radius: inherit;
+                opacity: 0;
+                transition: opacity 0.8s;
+                will-change: opacity;
+            }
+
+            :host(:not([auto-center])) #matRippleBackground[rippling] {
+                opacity: 0.10;
+            }
+
+            :host #matRippleWaves {
+                @apply(--layout-fit);
+                border-radius: 50%;
+            }
+
+            :host #matRippleWaves * {
+                background: currentColor;
+                border-radius: inherit;
+                opacity: 0.10;
+                position: absolute;
+                -webkit-transform: translate(0, 0) scale(0);
+                transform: translate(0, 0) scale(0);
+                -webkit-transition: opacity 0.54s, -webkit-transform 0.54s;
+                transition: opacity 0.54s, transform 0.54s;
+                will-change: opacity, -webkit-transform, transform;
+            }
+
+            :host([auto-center]) #matRippleWaves * {
+                opacity: 0.20;
+            }
+
+            :host #matRippleWaves *[smoothing] {
+                opacity: 0;
+                -webkit-transform: scale(1);
+                transform: scale(1);
+                -webkit-transition: opacity 0.54s, -webkit-transform 0.54s;
+                transition: opacity 0.54s, transform 0.54s;
+            }
+        </style>
+
         <mat-ink id="matRippleWrapper" color="[[color]]">
             <div id="matRippleBackground"></div>
             <div id="matRippleWaves"></div>
         </mat-ink>
+
     </template>
 
     <script>
