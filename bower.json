@@ -25,7 +25,7 @@
   "dependencies": {
     "expandjs": "ExpandJS/expandjs#0.9.8",
     "mat-ink": "ExpandJS/mat-ink#0.9.8",
-    "polymer": "Polymer/polymer#^1.0.0",
+    "polymer": "Polymer/polymer#^1.1.0",
     "iron-flex-layout": "PolymerElements/iron-flex-layout#^1.0.0"
   },
   "devDependencies": {
