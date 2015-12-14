@@ -6,7 +6,11 @@
     <template>
 
         <style>
-            :host .demo-label {
+            :host {
+                display: block;
+            }
+
+            :host .label {
                 height: 100px;
                 line-height: 100px;
                 text-align: center;
@@ -17,19 +21,19 @@
 
             <mat-demo-panel label="Default">
                 <script type="text/html">
-                    <div class="demo-label">Tap me!</div>
+                    <div class="label">Tap me!</div>
                     <mat-ripple></mat-ripple>
                 </script>
-                <div class="demo-label">Tap me!</div>
+                <div class="label">Tap me!</div>
                 <mat-ripple></mat-ripple>
             </mat-demo-panel>
 
             <mat-demo-panel label="Auto center">
                 <script type="text/html">
-                    <div class="demo-label">Tap me!</div>
+                    <div class="label">Tap me!</div>
                     <mat-ripple auto-center></mat-ripple>
                 </script>
-                <div class="demo-label">Tap me!</div>
+                <div class="label">Tap me!</div>
                 <mat-ripple auto-center></mat-ripple>
             </mat-demo-panel>
 
